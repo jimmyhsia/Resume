@@ -24,15 +24,10 @@
       <router-link to="/about">About</router-link>
     </div> -->
     <!-- <router-view/> -->
+    <parallax>
+      <img src="https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg">
+    </parallax>
   </div>
-
-
-<parallax>
-  <img src="https://images.pexels.com/photos/132037/pexels-photo-132037.jpeg">
-</parallax>
-
-
-
 </template>
 
 <style lang="scss">
