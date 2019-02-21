@@ -10,10 +10,13 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
     "@fortawesome/free-brands-svg-icons": "^5.7.2",
+    "@fortawesome/free-regular-svg-icons": "^5.7.2",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/vue-fontawesome": "^0.1.5",
     "bootstrap-vue": "^2.0.0-rc.11",
+    "echarts": "^4.1.0",
     "jquery": "^2.2.0",
+    "v-charts": "^1.19.0",
     "vue": "^2.5.22",
     "vue-parallaxy": "^1.1.1",
     "vue-router": "^3.0.1"
