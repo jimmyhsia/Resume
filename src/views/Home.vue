@@ -9,7 +9,7 @@
         <p class="show-text">Web Design - Backend Design - Data Sience</p>
       </div>
     </div>
-    <div class="article-70 section2" id="about">
+    <div class="article-70 section2" id="about" style="background-color: rgba(0, 0, 0, 0.8);">
       <div style="margin-top:5vh;" class="maintitlecontent">
         <h1>About</h1>
         <p class="show-text">
@@ -20,52 +20,132 @@
         <div style="padding-top: 2%;padding-left: 47%;">
           <button type="button" class="btn btn-warning" @click="doResume()">resume</button>
         </div>
-        
       </div>
     </div>
     <div class="article section3" id="skill">
       <div style="margin-top:5vh;" class="maintitlecontent">
-      <h1>Skill</h1>
-
-  <div class="container">
-  <div class="row">
-    <div class="col-sm">
-     <span class="fa-stack fa-lg fa-3x st-feature">
-        <i class="fab fa-js-square fa-stack-1x fa-inverse color"></i>
-          </span>
-          <h4>Website Design</h4>
-	        <p>前端</p>
-	        <p>Html、css、jquery</p>
-          <p>Bootstrap、Vue、ajax</p>
-          <p>ElementUi、d3js</p>
+        <h1>Skill</h1>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <span class="fa-stack fa-lg fa-3x st-feature">
+                <i class="fab fa-js-square fa-stack-1x fa-inverse color"></i>
+              </span>
+              <h4>Website Design</h4>
+              <p>前端</p>
+              <p>Html、css、jquery</p>
+              <p>Bootstrap、Vue、ajax</p>
+              <p>ElementUi、d3js</p>
+            </div>
+            <div class="col-sm">
+              <span class="fa-stack fa-lg fa-3x st-feature">
+                <i class="fa fa-laptop-code fa-stack-1x fa-inverse color"></i>
+              </span>
+              <h4>Backend Design</h4>
+              <p>後端</p>
+              <p>Java、C#</p>
+              <p>Spring、Struts、Hibernate</p>
+            </div>
+            <div class="col-sm">
+              <span class="fa-stack fa-lg fa-3x st-feature">
+                <i class="fa fa-database fa-stack-1x fa-inverse color"></i>
+              </span>
+              <h4>DataBase</h4>
+              <p>資料庫</p>
+              <p>Oracle DB、Ms SQL、DB2</p>
+            </div>
+            <div class="col-sm">
+              <span class="fa-stack fa-lg fa-3x st-feature">
+                <i class="fa fa-chart-line fa-stack-1x fa-inverse color"></i>
+              </span>
+              <h4>Data Sience</h4>
+              <p>人工智慧</p>
+              <p>TensorFlow、Keras</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-sm">
-      <span class="fa-stack fa-lg fa-3x st-feature">
-        <i class="fa fa-laptop-code fa-stack-1x fa-inverse color"></i>
-          </span>
-          <h4>Backend Design</h4>
-	        <p>後端</p>
-	        <p>Java、C#</p>
-          <p>Spring、Struts、Hibernate</p>
+    <div class="article-70 section2" id="experience">
+      <div style="margin-top:5vh;" class="experience">
+        <h1>Experience</h1>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <b-card
+                tag="article"
+                style="max-width: 20rem;"
+                class="mb-2"
+                border-variant="info"
+                header="聯強國際"
+                align="center"
+              >
+                <b-card-text>
+                  <ul>
+                    <li>開發內部ERP系統。</li>
+                    <li>新ERP系統導入澳洲、台灣。</li>
+                    <li>系統分析(SA)。</li>
+                    <li>系統設計(SD)。</li>
+                    <li>程式撰寫。</li>
+                    <li>擔任福委，舉辦部門及跨部門活動。</li>
+                  </ul>
+                </b-card-text>
+              </b-card>
+            </div>
+            <div class="col-sm">
+              <b-card
+                tag="article"
+                style="max-width: 20rem;"
+                class="mb-2"
+                border-variant="info"
+                header="經緯航太"
+                align="center"
+              >
+                <b-card-text>
+                  <ul>
+                    <li>開發台南市道路挖掘系統。</li>
+                    <li>系統分析(SA)。</li>
+                    <li>系統設計(SD)。</li>
+                  </ul>
+                </b-card-text>
+              </b-card>
+            </div>
+            <div class="col-sm">
+              <b-card
+                tag="article"
+                style="max-width: 20rem;"
+                class="mb-2"
+                border-variant="info"
+                header="網際優勢"
+                align="center"
+              >
+                <b-card-text>
+                  <ul>
+                    <li>開發中鋼ERP系統。</li>
+                    <li>程式撰寫。</li>
+                  </ul>
+                </b-card-text>
+              </b-card>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-sm">
-      <span class="fa-stack fa-lg fa-3x st-feature">
-            <i class="fa fa-database fa-stack-1x fa-inverse color"></i>
-          </span>
-          <h4>DataBase</h4>
-	        <p>資料庫</p>
-	        <p>Oracle DB、Ms SQL、DB2</p>
-    </div>
-    <div class="col-sm">
-          <span class="fa-stack fa-lg fa-3x st-feature">
-            <i class="fa fa-chart-line fa-stack-1x fa-inverse color"></i>
-          </span>
-          <h4>Data Sience</h4>
-	        <p>人工智慧</p>
-	        <p>TensorFlow、Keras</p>
-    </div>
-    </div>
-  </div>
+    <div class="article section4" id="about" style="background-color: rgba(0, 0, 0, 0.8);">
+      <div style="margin-top:5vh;" class="maintitlecontent">
+        <h1>聯強國際</h1>
+        <b-card>
+          <b-media>
+            <h5 class="mt-0">Media Title</h5>
+            <p>
+              使用 Spring、Stutrs1、Hibernate為框架，
+              後端使用 JAVA、
+              前端使用Javascript、jQuery、HTML
+              DB為Oracle SQL開發內部ERP統系，使用jQuery mobile開發手機網頁程式.
+            </p>
+          </b-media>
+        </b-card>
+        <ve-pie :data="chartData"></ve-pie>
       </div>
     </div>
   </div>
@@ -73,18 +153,28 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+//import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  },methods:{
-    doResume(){
+  name: "home",
+  data() {
+    return {
+      chartData: {
+        columns: ["工作內容", "年資"],
+        rows: [
+          { 工作內容: "SA", 年資: 0.6 },
+          { 工作內容: "SD", 年資: 0.9 },
+          { 工作內容: "PG", 年資: 1.5 }
+        ]
+      }
+    };
+  },
+  methods: {
+    doResume() {
       window.open("https://www.cakeresume.com/790f57");
     }
   }
-}
+};
 </script>
 <style lang="scss">
 .indexmenu {
@@ -127,6 +217,13 @@ export default {
   background-size: cover;
   line-height: 28px;
 }
+.el-loading-mask {
+  //position: absolute;
+  z-index: 2000;
+  background-color: rgba(255, 255, 255, 0.9);
+
+  transition: opacity 0.3s;
+}
 .section1 {
   color: white;
   background-image: url(../image/a.jpg);
@@ -134,17 +231,24 @@ export default {
   text-shadow: 3px 4px 5px #373030;
 }
 .section2 {
-  color: white;
-  // background-image: url(./image/b.jpg);
-  background-color: #00AA88;
+  color: black;
+  //background-image: url(../image/g.jpg);
+  background-color: rgba(0, 0, 0, 0.8);
   font-weight: bold;
-  text-shadow: 3px 4px 5px #373030;
+  // text-shadow: 3px 4px 5px #373030;
 }
 .section3 {
   color: white;
-  background-image: url(../image/c.jpg);
+  background-image: url(../image/f.jpg);
   font-weight: bold;
   text-shadow: 3px 4px 5px #373030;
+}
+.section4 {
+  color: #404040;
+  background-image: url(../image/e.jpg);
+  //background-color: #ffcc66;
+  font-weight: bold;
+  // text-shadow: 3px 4px 5px #373030;
 }
 .maintitlecontent h1 {
   text-transform: uppercase;
@@ -160,21 +264,34 @@ export default {
   letter-spacing: 0.5px;
 }
 
-.st-feature {
+.experience h1 {
+  // text-transform: uppercase;
+  text-align: center;
+  font-size: 80px;
+  // text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  color: white;
+}
 
-    border-radius: 50%;
-    position: relative;
-    -webkit-transform: rotate(0) scale(1);
-    -ms-transform: rotate(0) scale(1);
-    transform: rotate(0) scale(1);
-    -webkit-transition: color 0.3s, border-color 0.3s, background-color 0.3s, -webkit-transform 0.3s;
-    transition: color 0.3s, border-color 0.3s, background-color 0.3s, transform 0.3s;
+.experience li {
+  text-align: left;
+  font-size: 14px;
+}
+
+.st-feature {
+  border-radius: 50%;
+  position: relative;
+  -webkit-transform: rotate(0) scale(1);
+  -ms-transform: rotate(0) scale(1);
+  transform: rotate(0) scale(1);
+  -webkit-transition: color 0.3s, border-color 0.3s, background-color 0.3s,
+    -webkit-transform 0.3s;
+  transition: color 0.3s, border-color 0.3s, background-color 0.3s,
+    transform 0.3s;
 }
 .st-feature:hover {
- 
-    background-color: transparent;
-    -webkit-transform: rotate(360deg) scale(1.8);
-    -ms-transform: rotate(360deg) scale(1.8);
-    transform: rotate(360deg) scale(1.8);
+  background-color: transparent;
+  -webkit-transform: rotate(360deg) scale(1.8);
+  -ms-transform: rotate(360deg) scale(1.8);
+  transform: rotate(360deg) scale(1.8);
 }
 </style>

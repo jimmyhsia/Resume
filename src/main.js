@@ -14,12 +14,17 @@ import { faJsSquare } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faGooglePlus } from '@fortawesome/free-brands-svg-icons'
 import { dom } from '@fortawesome/fontawesome-svg-core'
+import { VStepper } from 'vue-stepper-component';
+import VCharts from 'v-charts'
+import VeLine from 'v-charts/lib/line.common'
 
 dom.watch();
-library.add(faDatabase,faGooglePlus,faLaptopCode,faChartLine,faJsSquare)
+library.add(faDatabase,faGooglePlus,faLaptopCode,faChartLine,faJsSquare);
 
-Vue.component('font-awesome-icon', FontAwesomeIcon)
-
+Vue.component('font-awesome-icon', FontAwesomeIcon);
+Vue.component('v-stepper', VStepper);
+Vue.component(VeLine.name, VeLine);
+Vue.use(VCharts)
 Vue.config.productionTip = false
 
 new Vue({

@@ -22,22 +22,12 @@
         </b-navbar-nav>
       </b-navbar>
     </div>
-      
-	  
-	    
+
     <router-view></router-view>
     <div></div>
-    
-    
-    
-
-      <!-- <i class="fas fa-magic" data-fa-transform="rotate-270" style="background:MistyRose"></i> -->
-       
-    </div>
- 
+  </div>
 </template>
 
 
 <script>
-
 </script>
