@@ -15,12 +15,15 @@
     "@fortawesome/vue-fontawesome": "^0.1.5",
     "bootstrap-vue": "^2.0.0-rc.11",
     "echarts": "^4.1.0",
+    "firebase": "^5.8.4",
     "jquery": "^3.3.1",
     "v-charts": "^1.19.0",
-    "vue": "^2.5.22",
+    "vue": "^2.6.7",
     "vue-parallaxy": "^1.1.1",
     "vue-router": "^3.0.1",
-    "vue-stepper-component": "^1.0.0"
+    "vue-stepper-component": "^1.0.0",
+    "vue-template-compiler": "^2.6.7",
+    "vuefire": "^1.4.5"
   },
   "devDependencies": {
     "@babel/polyfill": "^7.0.0-beta.53",
@@ -37,8 +40,7 @@
     "sass-loader": "^7.1.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
-    "vue-cli-plugin-bootstrap-vue": "^0.1.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-cli-plugin-bootstrap-vue": "^0.1.0"
   },
   "eslintConfig": {
     "root": true,

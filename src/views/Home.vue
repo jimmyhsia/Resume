@@ -66,7 +66,7 @@
         </div>
       </div>
     </div>
-    <div class="article-70 section2" id="experience">
+    <div class="article section2" id="experience">
       <div style="margin-top:5vh;" class="experience">
         <h1>Experience</h1>
         <div class="container">
@@ -88,7 +88,6 @@
                     <li>系統設計(SD)。</li>
                     <li>程式撰寫。</li>
                     <li>擔任福委，舉辦部門及跨部門活動。</li>
-                    
                   </ul>
                 </b-card-text>
               </b-card>
@@ -100,8 +99,7 @@
                 class="mb-2"
                 border-variant="info"
                 header="經緯航太"
-                align="center"
-              >
+                align="center">
                 <b-card-text>
                   <ul>
                     <li>開發台南市道路挖掘系統。</li>
@@ -118,8 +116,7 @@
                 class="mb-2"
                 border-variant="info"
                 header="網際優勢"
-                align="center"
-              >
+                align="center">
                 <b-card-text>
                   <ul>
                     <li>開發中鋼ERP系統。</li>
@@ -133,20 +130,66 @@
       </div>
     </div>
     <div class="article section4" id="about" style="background-color: rgba(0, 0, 0, 0.8);">
-      <div style="margin-top:5vh;" class="maintitlecontent">
+      <div style="margin-top:5vh;" class="experience">
         <h1>聯強國際</h1>
         <b-card>
           <b-media>
-            <h5 class="mt-0">Media Title</h5>
+            <h3>工作內容</h3>
             <p>
-              使用 Spring、Stutrs1、Hibernate為框架，
-              後端使用 JAVA、
-              前端使用Javascript、jQuery、HTML
-              DB為Oracle SQL開發內部ERP統系，使用jQuery mobile開發手機網頁程式.
+              維護及開發其維修、倉儲ERP系統，
+              使用 JAVA SSH為框架，前端使用Javascript、jQuery、
+              DB為Oracle SQL，使用jQuery mobile開發手機網頁程式。
             </p>
           </b-media>
         </b-card>
-        <ve-pie :data="chartData"></ve-pie>
+        <div class="container">
+          <div class="row">
+            <div class="col"><ve-pie :data="chartData"></ve-pie></div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article section4" id="about" style="background-color: rgba(0, 0, 0, 0.8);">
+      <div style="margin-top:5vh;" class="experience">
+        <h1>經緯航太</h1>
+        <b-card>
+          <b-media>
+            <h3>工作內容</h3>
+            <p>
+              開發台南市道路挖掘系統，為舊系統翻新，主要負責系統分析設計。
+            </p>
+          </b-media>
+        </b-card>
+        <div class="container">
+          <div class="row">
+            <div class="col"><ve-pie :data="chartData"></ve-pie></div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="article section4" id="about" style="background-color: rgba(0, 0, 0, 0.8);">
+      <div style="margin-top:5vh;" class="experience">
+        <h1>網際優勢</h1>
+        <b-card>
+          <b-media>
+            <h3>工作內容</h3>
+            <p>
+              開發中鋼ERP系統，
+              使用 JAVA Spring為框架，前端使用Javascript、jQuery、Vue
+              DB為DB2，使用jQuery mobile開發手機網頁程式。
+            </p>
+          </b-media>
+        </b-card>
+        <div class="container">
+          <div class="row">
+            <div class="col"><ve-pie :data="chartData"></ve-pie></div>
+            
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -155,21 +198,32 @@
 <script>
 // @ is an alias to /src
 //import HelloWorld from "@/components/HelloWorld.vue";
-
+import firebase from "firebase";
 export default {
   name: "home",
   data() {
     return {
+      resumeId:'jimmyhsia0522@gmail.com',
       chartData: {
         columns: ["工作內容", "年資"],
         rows: [
-          { 工作內容: "SA", 年資: 0.6 },
-          { 工作內容: "SD", 年資: 0.9 },
-          { 工作內容: "PG", 年資: 1.5 }
+          { 工作內容: "系統分析", 年資: 0.6 },
+          { 工作內容: "系統設計", 年資: 0.9 },
+          { 工作內容: "程式設計", 年資: 1.5 }
         ]
       }
     };
   },
+  mounted: function() {
+      var result = firebase.database().ref("resume");
+      firebase.database().ref("resume").once("value" , snap =>{
+        console.log(snap)
+      })
+       //console.log(result);
+      result.orderByChild("resumeId").equalTo("jimmyhsia0522@gmail.com").on("child_added", (snap) => {
+        console.log(snap.val());
+      });
+  },    
   methods: {
     doResume() {
       window.open("https://www.cakeresume.com/790f57");
@@ -198,7 +252,7 @@ export default {
   margin: 0 auto;
   height: 100vh;
   padding: 40px;
-  font: 24px "Arial";
+  font: 24px;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
@@ -211,7 +265,20 @@ export default {
   margin: 0 auto;
   height: 70vh;
   padding: 40px;
-  font: 24px "Arial";
+  font: 24px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  line-height: 28px;
+}
+
+.article-80 {
+  width: 100%;
+  margin: 0 auto;
+  height: 80vh;
+  padding: 40px;
+  font: 24px;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
@@ -222,7 +289,6 @@ export default {
   //position: absolute;
   z-index: 2000;
   background-color: rgba(255, 255, 255, 0.9);
-
   transition: opacity 0.3s;
 }
 .section1 {
@@ -233,8 +299,8 @@ export default {
 }
 .section2 {
   color: black;
-  //background-image: url(../image/g.jpg);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-image: url(../image/c.jpg);
+  //background-color: rgba(0, 0, 0, 0.8);
   font-weight: bold;
   // text-shadow: 3px 4px 5px #373030;
 }
