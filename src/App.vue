@@ -34,7 +34,7 @@
 import firebase from "firebase";
 export default {
   data() {
-    return {};
+    return {errorMsg:''};
   },
   methods: {
     setTest() {
@@ -100,15 +100,21 @@ export default {
               companyName: "網際優勢",
               detail: ["開發中鋼ERP系統。", "程式撰寫。"],
               jobContent:
-                "維護及開發其維修、倉儲ERP系統， 使用JAVA SSH為框架，前端使用Javascript、jQuery、 DB為Oracle SQL，使用jQuery mobile開發手機網頁程式。",
-              columns: ["工作內容", "比重"],
-              rows: [{ 工作內容: "程式設計", 比重: 100 }]
+                "主要工作內容為開發中鋼ERP系統，前端使用jquery，Vue，後端使用Java，資料庫使用DB2，框架使用Spring。",
+              chart: [
+                {
+                   columns: ["工作內容", "比重"],
+                   rows: [{ 工作內容: "程式設計", 比重: 100 }]
+                }
+              ]
+              
+             
             }
           ]}
           
         })
         .catch(function(error) {
-          console.error(error);
+          this.errorMsg=error;
         });
     }
   }

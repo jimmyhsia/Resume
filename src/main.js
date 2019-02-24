@@ -16,16 +16,7 @@ import { faGooglePlus } from '@fortawesome/free-brands-svg-icons'
 import { dom } from '@fortawesome/fontawesome-svg-core'
 import VCharts from 'v-charts'
 import VeLine from 'v-charts/lib/line.common'
-import firebase from "firebase";
-var config = {
-    apiKey: "AIzaSyAgIhi02NVhB53MUWTwBIrF_PnIdDgorJU",
-    authDomain: "resume-df0fa.firebaseapp.com",
-    databaseURL: "https://resume-df0fa.firebaseio.com",
-    projectId: "resume-df0fa",
-    storageBucket: "resume-df0fa.appspot.com",
-    messagingSenderId: "462385505050"
-};
-firebase.initializeApp(config);
+
 
 dom.watch();
 library.add(faDatabase,faGooglePlus,faLaptopCode,faChartLine,faJsSquare);

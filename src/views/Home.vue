@@ -103,7 +103,7 @@
         </b-card>
         <div class="container">
           <div class="row">
-             <div class="col" v-for="itemchart in item.chart"  :key='itemchart.column'><ve-pie :data="itemchart.columns"></ve-pie></div>
+             <div class="col" v-for="itemchart in item.chart"  :key='itemchart.column'><ve-pie :data="itemchart"></ve-pie></div>
             
           </div>
         </div>
@@ -120,6 +120,9 @@
 // @ is an alias to /src
 //import HelloWorld from "@/components/HelloWorld.vue";
 import firebase from "firebase";
+import {
+  firebaseDb
+} from '../firebaseDb'
 export default {
   name: "home",
 
@@ -137,7 +140,7 @@ export default {
       }
     };
   },
-  mounted: function() {
+  created: function() {
       var result = firebase.database().ref("resume");
       // child_added or value
       var $this = this;
