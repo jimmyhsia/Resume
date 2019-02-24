@@ -41,7 +41,7 @@ export default {
       firebase
         .database()
         .ref("resume")
-        .set({"jimmyhsia0522":{resumeId: "jimmyhsia0522@gmail.com",
+        .set({"jimmyhsia":{resumeId: "jimmyhsia0522@gmail.com",
           fistName: "Hsia",
           lastName: "Jimmy",
           chName: "夏啟銘",

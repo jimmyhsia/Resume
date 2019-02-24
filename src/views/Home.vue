@@ -2,20 +2,21 @@
   <div class="home">
     <div class="article section1">
       <div style="margin-top:30vh;" class="maintitlecontent">
-        <h1>夏啟銘</h1>
-        <h1>Jimmy</h1>
-        <p class="show-text">Full Stack Developer</p>
+
+        
+        <h1>{{firebase}}</h1>
+        <h1>{{resuemData.chName}}</h1>
+        <h1>{{resuemData.lastName}} {{resuemData.fristName}}</h1>
+        <p class="show-text">{{resuemData.jobTitle}}</p>
         <p class="show-text">Welcome To My Spece</p>
-        <p class="show-text">Web Design - Backend Design - Data Sience</p>
+        <p class="show-text"><template v-for="item in resuemData.jobDetail">{{item}} &nbsp;&nbsp;</template> </p>
       </div>
     </div>
     <div class="article-70 section2" id="about" style="background-color: rgba(0, 0, 0, 0.8);">
       <div style="margin-top:5vh;" class="maintitlecontent">
         <h1>About</h1>
         <p class="show-text">
-          從畢業開始就從事資訊相關工作，從程式撰寫到分析設計，也非常喜愛如此的工作內容，
-          近年來也開始朝著人工智慧的方向學習中，目前在成大 工程科學碩士在職專班 就讀中，
-          主要研究方向為Machine Learning與Deep Learning.
+          {{resuemData.aboutMe}}
         </p>
         <div style="padding-top: 2%;padding-left: 47%;">
           <button type="button" class="btn btn-warning" @click="doResume()">resume</button>
@@ -71,127 +72,50 @@
         <h1>Experience</h1>
         <div class="container">
           <div class="row">
-            <div class="col-sm">
-              <b-card
-                tag="article"
+            <div class="col-sm" v-for="item in resuemData.experience" :key='item'>
+              <b-card tag="article"
                 style="max-width: 20rem;"
                 class="mb-2"
                 border-variant="info"
-                header="聯強國際"
-                align="center"
+                :header="item.companyName"
+                align="center" 
               >
-                <b-card-text>
+              <b-card-text>
                   <ul>
-                    <li>開發內部ERP系統。</li>
-                    <li>新ERP系統導入澳洲、台灣。</li>
-                    <li>系統分析(SA)。</li>
-                    <li>系統設計(SD)。</li>
-                    <li>程式撰寫。</li>
-                    <li>擔任福委，舉辦部門及跨部門活動。</li>
+                    <li v-for="detailItem in item.detail" :key='detailItem'>{{detailItem}}</li>
                   </ul>
                 </b-card-text>
               </b-card>
+            
             </div>
-            <div class="col-sm">
-              <b-card
-                tag="article"
-                style="max-width: 20rem;"
-                class="mb-2"
-                border-variant="info"
-                header="經緯航太"
-                align="center">
-                <b-card-text>
-                  <ul>
-                    <li>開發台南市道路挖掘系統。</li>
-                    <li>系統分析(SA)。</li>
-                    <li>系統設計(SD)。</li>
-                  </ul>
-                </b-card-text>
-              </b-card>
-            </div>
-            <div class="col-sm">
-              <b-card
-                tag="article"
-                style="max-width: 20rem;"
-                class="mb-2"
-                border-variant="info"
-                header="網際優勢"
-                align="center">
-                <b-card-text>
-                  <ul>
-                    <li>開發中鋼ERP系統。</li>
-                    <li>程式撰寫。</li>
-                  </ul>
-                </b-card-text>
-              </b-card>
-            </div>
+
           </div>
         </div>
       </div>
     </div>
-    <div class="article section4" id="about" style="background-color: rgba(0, 0, 0, 0.8);">
+    <div class="article section4" id="about" style="background-color: rgba(0, 0, 0, 0.8);"  v-for="item in resuemData.experience" :key='item'>
       <div style="margin-top:5vh;" class="experience">
-        <h1>聯強國際</h1>
+        <h1>{{item.companyName}}</h1>
         <b-card>
           <b-media>
             <h3>工作內容</h3>
             <p>
-              維護及開發其維修、倉儲ERP系統，
-              使用 JAVA SSH為框架，前端使用Javascript、jQuery、
-              DB為Oracle SQL，使用jQuery mobile開發手機網頁程式。
+              {{item.jobContent}}
             </p>
           </b-media>
         </b-card>
         <div class="container">
           <div class="row">
-            <div class="col"><ve-pie :data="chartData"></ve-pie></div>
+             <div class="col" v-for="itemchart in item.chart" :key='itemchart'><ve-pie :data="itemchart"></ve-pie></div>
             
           </div>
         </div>
       </div>
     </div>
 
-    <div class="article section4" id="about" style="background-color: rgba(0, 0, 0, 0.8);">
-      <div style="margin-top:5vh;" class="experience">
-        <h1>經緯航太</h1>
-        <b-card>
-          <b-media>
-            <h3>工作內容</h3>
-            <p>
-              開發台南市道路挖掘系統，為舊系統翻新，主要負責系統分析設計。
-            </p>
-          </b-media>
-        </b-card>
-        <div class="container">
-          <div class="row">
-            <div class="col"><ve-pie :data="chartData"></ve-pie></div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
-    <div class="article section4" id="about" style="background-color: rgba(0, 0, 0, 0.8);">
-      <div style="margin-top:5vh;" class="experience">
-        <h1>網際優勢</h1>
-        <b-card>
-          <b-media>
-            <h3>工作內容</h3>
-            <p>
-              開發中鋼ERP系統，
-              使用 JAVA Spring為框架，前端使用Javascript、jQuery、Vue
-              DB為DB2，使用jQuery mobile開發手機網頁程式。
-            </p>
-          </b-media>
-        </b-card>
-        <div class="container">
-          <div class="row">
-            <div class="col"><ve-pie :data="chartData"></ve-pie></div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
+   
   </div>
 </template>
 
@@ -201,8 +125,13 @@
 import firebase from "firebase";
 export default {
   name: "home",
+  firebase() {
+        firebase: firebase.database.ref( 'resume' )
+  },
   data() {
     return {
+      firebase:{},
+      resuemData:{},
       resumeId:'jimmyhsia0522@gmail.com',
       chartData: {
         columns: ["工作內容", "年資"],
@@ -215,19 +144,36 @@ export default {
     };
   },
   mounted: function() {
-      var result = firebase.database().ref("resume/resume001");
-      // where username='aaaa'
+      var result = firebase.database().ref("resume");
       // child_added or value
-      result.orderByChild('username').equalTo("aaaaa").on("child_added", function(snap) {
-        console.log(snap.val())
-        
+      var $this = this;
+      result.orderByChild('resumeId').equalTo("jimmyhsia0522@gmail.com").on("child_added", function(snap) {
+        $this.$set($this.$data , 'resuemData', snap.val())
       })
+      
   },    
+
   methods: {
     doResume() {
       window.open("https://www.cakeresume.com/790f57");
+    },
+    getData(){
+      var result = firebase.database().ref("resume");
+      // child_added or value
+      var $this = this;
+      result.orderByChild('resumeId').equalTo("jimmyhsia0522@gmail.com").on("child_added", function(snap) {
+        $this.$set($this.$data , 'resuemData', snap.val())
+      })
     }
-  }
+  },
+  watch: {
+       teamsRef() {
+          var $this = this;
+          var data = result.orderByChild('resumeId').equalTo("jimmyhsia0522@gmail.com").on("child_added", function(snap) {
+            $this.$set($this.$data , 'resuemData', snap.val())
+          })
+        }
+    }
 };
 </script>
 <style lang="scss">
