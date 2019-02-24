@@ -141,26 +141,17 @@ export default {
     };
   },
   created: function() {
-      var result = firebase.database().ref("resume");
+      var result = firebaseDb.ref("resume");
       // child_added or value
       var $this = this;
-      result.orderByChild('resumeId').equalTo("jimmyhsia0522@gmail.com").on("child_added", function(snap) {
-        $this.$set($this.$data , 'resuemData', snap.val())
+      result.orderByChild('resumeId').equalTo("jimmyhsia0522@gmail.com").on("value", function(snap) {
+        $this.$set($this.$data , 'resuemData', snap.val().jimmyhsia)
       })
-      
   },    
 
   methods: {
     doResume() {
       window.open("https://www.cakeresume.com/790f57");
-    },
-    getData(){
-      var result = firebase.database().ref("resume");
-      // child_added or value
-      var $this = this;
-      result.orderByChild('resumeId').equalTo("jimmyhsia0522@gmail.com").on("child_added", function(snap) {
-        $this.$set($this.$data , 'resuemData', snap.val())
-      })
     }
   },
 };
