@@ -215,14 +215,13 @@ export default {
     };
   },
   mounted: function() {
-      var result = firebase.database().ref("resume");
-      firebase.database().ref("resume").once("value" , snap =>{
-        console.log(snap)
+      var result = firebase.database().ref("resume/resume001");
+      // where username='aaaa'
+      // child_added or value
+      result.orderByChild('username').equalTo("aaaaa").on("child_added", function(snap) {
+        console.log(snap.val())
+        
       })
-       //console.log(result);
-      result.orderByChild("resumeId").equalTo("jimmyhsia0522@gmail.com").on("child_added", (snap) => {
-        console.log(snap.val());
-      });
   },    
   methods: {
     doResume() {

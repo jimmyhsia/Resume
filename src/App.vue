@@ -7,7 +7,7 @@
           <b-nav-item href="#about">About</b-nav-item>
           <b-nav-item href="#skill">Skill</b-nav-item>
           <b-nav-item href="#">Experience</b-nav-item>
-          <!-- <b-nav-item href="#" @click="setTest">test</b-nav-item> -->
+          <b-nav-item href="#" @click="setTest">test</b-nav-item>
           <!-- Navbar dropdowns 
       <b-nav-item-dropdown text="Lang" right>
         <b-dropdown-item href="#">EN</b-dropdown-item>
@@ -41,8 +41,7 @@ export default {
       firebase
         .database()
         .ref("resume")
-        .set({
-          resumeId: "jimmyhsia0522@gmail.com",
+        .set({"jimmyhsia0522":{resumeId: "jimmyhsia0522@gmail.com",
           fistName: "Hsia",
           lastName: "Jimmy",
           chName: "夏啟銘",
@@ -105,7 +104,8 @@ export default {
               columns: ["工作內容", "比重"],
               rows: [{ 工作內容: "程式設計", 比重: 100 }]
             }
-          ]
+          ]}
+          
         })
         .catch(function(error) {
           console.error(error);
