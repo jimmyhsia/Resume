@@ -2,9 +2,6 @@
   <div class="home">
     <div class="article section1">
       <div style="margin-top:30vh;" class="maintitlecontent">
-
-        
-        <h1>{{firebase}}</h1>
         <h1>{{resuemData.chName}}</h1>
         <h1>{{resuemData.lastName}} {{resuemData.fristName}}</h1>
         <p class="show-text">{{resuemData.jobTitle}}</p>
@@ -72,7 +69,7 @@
         <h1>Experience</h1>
         <div class="container">
           <div class="row">
-            <div class="col-sm" v-for="item in resuemData.experience" :key='item'>
+            <div class="col-sm" v-for="item in resuemData.experience" :key='item.companyName'>
               <b-card tag="article"
                 style="max-width: 20rem;"
                 class="mb-2"
@@ -93,7 +90,7 @@
         </div>
       </div>
     </div>
-    <div class="article section4" id="about" style="background-color: rgba(0, 0, 0, 0.8);"  v-for="item in resuemData.experience" :key='item'>
+    <div class="article section4" id="about" style="background-color: rgba(0, 0, 0, 0.8);"  v-for="item in resuemData.experience" :key='item.jobContent'>
       <div style="margin-top:5vh;" class="experience">
         <h1>{{item.companyName}}</h1>
         <b-card>
@@ -106,7 +103,7 @@
         </b-card>
         <div class="container">
           <div class="row">
-             <div class="col" v-for="itemchart in item.chart" :key='itemchart'><ve-pie :data="itemchart"></ve-pie></div>
+             <div class="col" v-for="itemchart in item.chart"  :key='itemchart.column'><ve-pie :data="itemchart.columns"></ve-pie></div>
             
           </div>
         </div>
@@ -125,12 +122,9 @@
 import firebase from "firebase";
 export default {
   name: "home",
-  firebase() {
-        firebase: firebase.database.ref( 'resume' )
-  },
+
   data() {
     return {
-      firebase:{},
       resuemData:{},
       resumeId:'jimmyhsia0522@gmail.com',
       chartData: {
@@ -166,14 +160,6 @@ export default {
       })
     }
   },
-  watch: {
-       teamsRef() {
-          var $this = this;
-          var data = result.orderByChild('resumeId').equalTo("jimmyhsia0522@gmail.com").on("child_added", function(snap) {
-            $this.$set($this.$data , 'resuemData', snap.val())
-          })
-        }
-    }
 };
 </script>
 <style lang="scss">
